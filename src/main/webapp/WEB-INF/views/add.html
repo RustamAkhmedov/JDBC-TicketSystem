@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:method="post" th:action="@{/}" th:object="${ticket}">
+
+    <label for="message" >Enter message</label>
+    <input type="text" th:field="*{message}" id = "message"></input>
+    <div style="color:red;" th:if="${#fields.hasErrors('message')}" th:errors="*{message}">Message Error</div>
+    <br>
+    <label for="date" >Enter date</label>
+    <input type="text" th:field="*{date}" id = "date"></input>
+    <div style="color:red;" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Date Error</div>
+    <br>
+    <label for="description" >Enter description</label>
+    <input type="text" th:field="*{description}" id = "description"></input>
+    <div style="color:red;" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</div>
+    <br>
+    <input type="submit" value="Create">
+
+</form>
+
+</body>
+</html>

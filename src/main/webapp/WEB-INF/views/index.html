@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Title</title>
+</head>
+<body>
+
+<div th:each="ticket : ${tickets}" >
+    <p th:text="${ticket.getID() + ', ' + ticket.getDate() + ', ' + ticket.getMessage() + ', ' + ticket.getDescription()}">ticket</p>
+</div>
+
+<a href="/add">Create new Ticket</a>
+
+</body>
+</html>
